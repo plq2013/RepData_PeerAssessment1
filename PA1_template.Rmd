@@ -2,10 +2,12 @@
 
 ## Loading and preprocessing the data
 * Dependent on following packages
-    ```{r}
+    ```{r, echo=TRUE}
     library(data.table) 
     library(lattice)
-    
+    ```   
+* Read into R-Environment as "raw" data
+    ```{r, echo = TRUE}
     data.raw <- read.csv("activity.csv")
     ```
 
@@ -56,7 +58,7 @@
     ```
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
-    * I am going to replace the missing value with "the mean for that 5-minute interval across all days", because of the similarity in daily activity.
+    * I am going to replace the missing value with "the mean for that 5-minute interval across all days", because of the **similarity** in daily activities.
     
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
     ```{r, echo=TRUE}
@@ -84,7 +86,7 @@
     median(stepsPerDay2$steps)
     ```
     
-    The imputed data has changed the mean value and the median value of total steps taken per day. 
+    Answer: The imputed data has changed the mean value and the median value of total steps taken per day. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -104,4 +106,5 @@
     xyplot(steps~interval | day,data=stepsPerInterval2, aspect=1/2,type="l")
     
     ```
-    There is obvious difference between weekends and weekdays
+    
+    There is obviously difference between weekends and weekdays

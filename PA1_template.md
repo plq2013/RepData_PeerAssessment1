@@ -6,7 +6,11 @@
     ```r
     library(data.table)
     library(lattice)
+    ```
+
+* Read into R-Environment as "raw" data
     
+    ```r
     data.raw <- read.csv("activity.csv")
     ```
 
@@ -23,7 +27,7 @@
     hist(stepsPerDay$steps, xlab = "total number steps taken per day", main = "Histogram of total steps taken per day")
     ```
     
-    ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+    ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day 
@@ -62,7 +66,7 @@
         ylab = "Averaged number steps across all days")
     ```
     
-    ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+    ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -90,7 +94,7 @@
 
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
-    * I am going to replace the missing value with "the mean for that 5-minute interval across all days", because of the similarity in daily activity.
+    * I am going to replace the missing value with "the mean for that 5-minute interval across all days", because of the **similarity** in daily activities.
     
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
     
@@ -135,7 +139,7 @@
     ```
 
     
-    The imputed data has changed the mean value and the median value of total steps taken per day. 
+    Answer: The imputed data has changed the mean value and the median value of total steps taken per day. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -159,6 +163,7 @@
     xyplot(steps ~ interval | day, data = stepsPerInterval2, aspect = 1/2, type = "l")
     ```
     
-    ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
+    ![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
 
-    There is obvious difference between weekends and weekdays
+    
+    There is obviously difference between weekends and weekdays
